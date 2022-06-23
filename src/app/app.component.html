@@ -4,14 +4,7 @@
 
     <div class="w3-padding-small w3-margin-bottom scroll-locker">
 
-      <div class="w3-margin-top w3-gray w3-padding-small" *ngFor="let i of list">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus urna. Sed eu dictum quam.
-        </p>
-        <div class="w3-right-align">
-          <i class="fa fa-edit pointer"></i>
-        </div>
-      </div>
+      <app-note *ngFor="let i of list"></app-note>
 
       <div class="w3-margin"></div>
 
@@ -21,42 +14,13 @@
 
   <div class="w3-threequarter">
     <div class="w3-border-left full-height">
-
-      <div class="w3-center note_logo">
-        <i class="w3-xxxlarge fa fa-book"></i>
-        <h1><b>My Cloud Note</b></h1>
-      </div>
-
-      <div class="w3-padding-small" *ngIf="false">
-        <div class="w3-clear w3-padding-small">
-          <i class="fa fa-trash-o w3-right pointer w3-large w3-text-red"></i>
-        </div>
-        <div class="scroll-locker w3-xxlarge">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus urna. Sed eu dictum quam. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Donec non risus urna. Sed eu dictum quam. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Donec non risus urna. Sed eu dictum quam.
-          </p>
-        </div>
-      </div>
-
-      <div class="w3-padding-small" *ngIf="false">
-        <div class="w3-clear w3-padding">
-          <button class="w3-button w3-right  w3-gray w3-hover-black">
-            <i class="fa fa-save"></i> Update
-          </button>
-        </div>
-        <div class="w3-clear">
-          <textarea class="w3-input w3-border-0" placeholder="Start here ..."></textarea>
-        </div>
-      </div>
-
+      <router-outlet></router-outlet>
     </div>
   </div>
 
   <div class="w3-bottom">
     <div class="w3-quarter w3-padding w3-white">
-      <button class="w3-button w3-block w3-gray w3-hover-black">
+      <button class="w3-button w3-block w3-gray w3-hover-black" routerLink="editor">
         <i class="fa fa-plus"></i> Add New Notes
       </button>
     </div>
@@ -64,16 +28,4 @@
 
 </div>
 
-<div class="w3-modal w3-show" *ngIf="false">
-  <div class="w3-modal-content w3-light-gray">
-    <div class="w3-container">
-      <h1 class="w3-center">Are you sure to delete?</h1>
-      <p class="w3-center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non risus urna. Sed eu dictum quam. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit.</p>
-      <div class="w3-center">
-        <button class="w3-button w3-margin w3-blue">Cancel</button>
-        <button class="w3-button w3-margin w3-red">Delete</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-confirm-alert *ngIf="false"></app-confirm-alert>
